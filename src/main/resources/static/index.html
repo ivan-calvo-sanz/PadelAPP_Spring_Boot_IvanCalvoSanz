@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Define la codificación de caracteres, 
+     adapta la página a distintos dispositivos
+     establece el título que aparece en la pestaña del navegador. -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PadelAPP</title>
+
+    <!-- FONTS -->
+    <!-- Carga las fuentes Poppins y Raleway desde Google Fonts.
+    preconnect adelanta la conexión para que carguen más rápido. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Hojas de estilo propios -->
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+    <!-- FONT AWESOME (ICONOS) -->
+    <!-- Carga la hoja de estilos local de Font Awesome para usar sus iconos. -->
+    <link rel="stylesheet" href="css/cssFont_Awesome/all.min.css">
+
+    <!-- ADMINLTE (ESTILOS) -->
+    <!-- Carga los estilos principales del tema AdminLTE. -->
+    <link rel="stylesheet" type="text/css" href="css/cssAdminLTE/adminlte.min.css">
+
+</head>
+<body>
+
+    <div class="login">
+        <img src="img/fondo.jpg" alt="login image" class="login_img">
+    
+        <!-- Formulario de inicio de sesión: envía los datos por POST al controlador indicado. -->
+        <form action="/login" method="post" class="login_form">
+            <h1 class="login_title">Login</h1>
+            <div class="login_content">
+
+                <div class="login_box">
+                    <!-- Icono Font Awesome usuario -->
+                    <i class="fa-regular fa-user fa-lg"></i>
+                    <!-- Campo para escribir el usuario -->
+                    <div class="login_box-input">
+                        <input id="login-user" name="user" type="text" required class="login_input" placeholder=" ">
+                        <label for="login-user" class="login_label">Usuario</label>
+                    </div>
+                </div>
+                <div class="login_box">
+                    <!-- Icono Font Awesome contraseña -->
+                    <i class="fa-solid fa-lock fa-lg"></i>
+                    <!-- Campo para escribir la contraseña -->
+                    <div class="login_box-input">
+                        <input id="login-pass" name="pass" type="password" required class="login_input" placeholder=" ">
+                        <label for="login-pass" class="login_label">Contraseña</label>
+                        <!-- Icono Font Awesome "Ojo" abierto o Cerrado -->
+                        <i class="fa-regular fa-eye-slash fa-lg login-eye" id="login-eye"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón que envía el formulario al archivo indicado en su atributo action. -->
+            <button type="submit" class="login_button">Login</button>
+
+        </form>
+    </div>
+</body>
+
+</html>
+
+<!-- Carga el JavaScript propio de esta página -->
+<script src="js/index.js"></script>
