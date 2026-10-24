@@ -1,5 +1,6 @@
 # PadelApp Spring Boot
-Aplicación web en desarrollo orientada a la gestión de usuarios y reservas de pistas de pádel. El proyecto sirve como práctica de desarrollo con Java, Spring Boot, Spring Data JPA y MySQL.
+Aplicación web en desarrollo orientada a la gestión de usuarios y reservas de pistas de pádel. 
+El proyecto sirve como práctica de desarrollo con Java, Spring Boot, Spring Data JPA y MySQL.
 
 ## Estado actual
 La aplicación incluye actualmente:
@@ -26,6 +27,7 @@ La gestión completa de usuarios y reservas está prevista para futuras etapas d
 - Lombok
 
 ## Estructura principal:
+```text
 src/main/java/com/padelapp/padelapp/
 ├── controladores/
 │   └── LoginControlador.java
@@ -46,6 +48,7 @@ src/main/resources/
     ├── css/
     ├── img/
     └── js/
+```
 
 ## Requisitos
 Para ejecutar la aplicación necesitas:

@@ -1,18 +1,20 @@
-// Espera a que el navegador termine de cargar y leer el HTML de la página.
+// Espera a que el navegador termine de cargar el HTML
 document.addEventListener("DOMContentLoaded", function () {
 
-  // Busca en el HTML el elemento cuyo id es "login-eye".
+
+  /* ***********************************************************
+     CONTROL OJO ABIERTO CERRADO DEL PASSWORD
+  *********************************************************** */
+  // Busca el icono del ojo y el campo de contraseña.
   const iconoOjo = document.getElementById("login-eye");
-  // Busca el campo de contraseña cuyo id es "login-pass".
   const inputPass = document.getElementById("login-pass");
 
-  // Si falta alguno de esos elementos, termina esta función para evitar errores.
-  if (!iconoOjo || !inputPass) return;
-
-  // Añade un evento: cuando se haga clic en el icono, ejecuta la función cambiar.
+  // Añade un evento: cuando se haga clic en el icono, ejecuta la función cambiar
   iconoOjo.addEventListener("click", cambiar);
 
-  // Define la función que alterna entre mostrar y ocultar la contraseña.
+  /**
+   * FUNCION alterna el ojo abierto o cerrado de mostrar y ocultar la contraseña
+   */
   function cambiar() {
     // Comprueba si el campo está ocultando la contraseña.
     if (inputPass.getAttribute("type") === "password") {
@@ -31,4 +33,30 @@ document.addEventListener("DOMContentLoaded", function () {
       iconoOjo.classList.add("fa-eye-slash");
     }
   }
+  /* ***********************************************************
+     FIN
+  *********************************************************** */
+
+  /*  **********************************************************
+      CONTROL AVISOS DE ERROR DE USUARIO Y CONTRASEÑA INCORRECTA
+  *********************************************************** */
+  // Lee los parámetros que aparecen en la URL, por ejemplo ?error=credenciales.
+  const parametros = new URLSearchParams(window.location.search);
+  // Obtiene el valor del parámetro "error".
+  const error = parametros.get("error");
+  // Busca el contenedor donde se mostrará el mensaje.
+  const aviso = document.getElementById("mensaje-error");
+
+  // prepara el mensaje correspondiente..
+  if (aviso && error === "credenciales") {
+    aviso.innerHTML = `<i class="fa-solid fa-circle-xmark fa-lg"></i> Usuario o contraseña incorrectos`;
+    aviso.style.display = "block";
+  } else if (aviso && error === "rol") {
+    aviso.innerHTML = `<i class="fa-solid fa-circle-xmark fa-lg"></i> El usuario no tiene un rol válido`;
+    aviso.style.display = "block";
+  }
+  /* ***********************************************************
+     FIN
+  *********************************************************** */
+
 });

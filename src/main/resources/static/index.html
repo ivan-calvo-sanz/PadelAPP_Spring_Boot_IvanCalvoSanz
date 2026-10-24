@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
 
     <!-- Define la codificación de caracteres, 
@@ -15,10 +16,8 @@
     preconnect adelanta la conexión para que carguen más rápido. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Raleway:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Raleway:wght@400;700&display=swap"
+        rel="stylesheet" />
 
     <!-- Hojas de estilo propios -->
     <link rel="stylesheet" type="text/css" href="css/index.css" />
@@ -32,11 +31,12 @@
     <link rel="stylesheet" type="text/css" href="css/cssAdminLTE/adminlte.min.css">
 
 </head>
+
 <body>
 
     <div class="login">
         <img src="img/fondo.jpg" alt="login image" class="login_img">
-    
+
         <!-- Formulario de inicio de sesión: envía los datos por POST al controlador indicado. -->
         <form action="/login" method="post" class="login_form">
             <h1 class="login_title">Login</h1>
@@ -67,11 +67,17 @@
             <!-- Botón que envía el formulario al archivo indicado en su atributo action. -->
             <button type="submit" class="login_button">Login</button>
 
+            <!-- ***** UTILIZANDO JS ***** -->
+            <!-- Aviso si el usuario o la contraseña son incorrectos -->
+            <div id="mensaje-error" class="alert alert-danger text-center" role="alert" style="display: none;"></div>
+
         </form>
     </div>
+
+
+    <!-- Carga el JavaScript propio de esta página -->
+    <script src="js/index.js"></script>
+    
 </body>
 
 </html>
-
-<!-- Carga el JavaScript propio de esta página -->
-<script src="js/index.js"></script>
